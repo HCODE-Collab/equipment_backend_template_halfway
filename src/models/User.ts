@@ -8,7 +8,7 @@ export interface User{
 }
 
 export async function createUser(email: string, password: string){
-    await pool.execute(`INSERT INTO users (email, ppassword) VALUES (?, ?)`, [email, password]);
+    await pool.execute(`INSERT INTO users (email, password) VALUES (?, ?)`, [email, password]);
 }
 
 export async function getUserByEmail(email: string): Promise<User | null>{
